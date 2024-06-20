@@ -74,7 +74,6 @@ export default async function HomePage() {
           <ChibahSection
             title={homePageContent.chibahTitle}
             content={homePageContent.chibahContent}
-          
           />
         </>
       ) : (
