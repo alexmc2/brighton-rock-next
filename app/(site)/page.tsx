@@ -57,6 +57,7 @@ export default async function HomePage() {
             modalTitle={aboutModalContent.title}
             modalContent={aboutModalContent.content}
           />
+
           <Gallery images={homePageContent.galleryImages}>
             {(carouselImages) => (
               <Carousel
@@ -65,12 +66,14 @@ export default async function HomePage() {
               />
             )}
           </Gallery>
+
           <CooperativeSection
             title={homePageContent.cooperativeTitle}
             content={homePageContent.cooperativeContent}
             modalTitle={cooperativeModalContent.title}
             modalContent={cooperativeModalContent.content}
           />
+          
           <ChibahSection
             title={homePageContent.chibahTitle}
             content={homePageContent.chibahContent}
