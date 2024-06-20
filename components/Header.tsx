@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -9,10 +9,20 @@ import {
   IconButton,
   Button,
   Box,
+  Collapse,
+  List,
+  ListItem,
+  ListItemText,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <AppBar position="fixed" color="primary" elevation={0}>
       <Container
@@ -54,12 +64,54 @@ export default function Header() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ ml: 2 }}
+            sx={{ display: { xs: 'flex', md: 'none' } }}
+            onClick={handleMenuToggle}
           >
             <MenuIcon />
           </IconButton>
         </Toolbar>
       </Container>
+      <Collapse in={isMenuOpen} timeout="auto" unmountOnExit>
+        <List
+          sx={{
+            backgroundColor: 'primary.main',
+            color: 'white',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <ListItem button component="a" href="/">
+            <ListItemText
+              primary="HOME"
+              primaryTypographyProps={{ variant: 'h6', align: 'center' }}
+              sx={{ color: 'white' }}
+            />
+          </ListItem>
+          <ListItem button component="a" href="/meetings">
+            <ListItemText
+              primary="MEETINGS"
+              primaryTypographyProps={{ variant: 'h6', align: 'center' }}
+              sx={{ color: 'white' }}
+            />
+          </ListItem>
+          <ListItem button component="a" href="/contact">
+            <ListItemText
+              primary="CONTACT"
+              primaryTypographyProps={{ variant: 'h6', align: 'center' }}
+              sx={{ color: 'white' }}
+            />
+          </ListItem>
+          <ListItem button component="a" href="/vacancies">
+            <ListItemText
+              primary="VACANCIES"
+              primaryTypographyProps={{ variant: 'h6', align: 'center' }}
+              sx={{ color: 'white' }}
+            />
+          </ListItem>
+        </List>
+      </Collapse>
     </AppBar>
   );
 }

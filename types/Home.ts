@@ -20,4 +20,6 @@ export type HomePage = {
     };
     alt?: string;
   }[];
+  chibahTitle: string;
+  chibahContent: PortableTextBlock[];
 };

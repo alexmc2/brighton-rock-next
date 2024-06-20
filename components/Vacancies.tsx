@@ -1,3 +1,4 @@
+// components/VacanciesSection.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -11,14 +12,14 @@ import {
   Modal,
 } from '@mui/material';
 
-interface AboutSectionProps {
+interface VacanciesSectionProps {
   title: string;
   content: PortableTextBlock[];
   modalTitle: string;
   modalContent: PortableTextBlock[];
 }
 
-const AboutSection: React.FC<AboutSectionProps> = ({
+const VacanciesSection: React.FC<VacanciesSectionProps> = ({
   title,
   content,
   modalTitle,
@@ -62,7 +63,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
               size="large"
               onClick={handleOpen}
             >
-              More About Us
+              Our Application Process
             </Button>
           </div>
         </CardContent>
@@ -103,4 +104,4 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   );
 };
 
-export default AboutSection;
+export default VacanciesSection;

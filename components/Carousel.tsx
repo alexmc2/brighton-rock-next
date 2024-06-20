@@ -23,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({ title, images }) => {
   return (
     <Container
       maxWidth={false}
-      className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 mt-10 mb-24"
+      className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 mt-10 mb-10"
     >
       <Card>
         <CardContent className="m-0.5 bg-primary-dark/5">
@@ -36,7 +36,13 @@ const Carousel: React.FC<CarouselProps> = ({ title, images }) => {
             {title}
           </Typography>
           <div className="px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20">
-            <ReactCarousel showThumbs={false} showStatus={false}>
+            <ReactCarousel
+              showThumbs={false}
+              showStatus={false}
+              autoPlay={true}
+              interval={4000}
+              infiniteLoop={true}
+            >
               {images.map((image, index) => (
                 <div key={index}>
                   <Image
@@ -44,9 +50,6 @@ const Carousel: React.FC<CarouselProps> = ({ title, images }) => {
                     alt={image.alt || ''}
                     width={image.width}
                     height={image.height}
-                    layout="responsive"
-                    objectFit="cover"
-                    quality={100}
                   />
                 </div>
               ))}

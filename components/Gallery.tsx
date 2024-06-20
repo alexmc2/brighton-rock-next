@@ -1,6 +1,7 @@
 // components/Gallery.tsx
 import React from 'react';
 import { urlFor } from '../app/client-config';
+import CarouselImage from './Carousel';
 
 interface GalleryImage {
   _type: string;
@@ -11,12 +12,16 @@ interface GalleryImage {
   };
   alt?: string;
 }
+interface CarouselImage {
+  url: string;
+  alt?: string;
+  width: number;
+  height: number;
+}
 
 interface GalleryProps {
   images?: GalleryImage[];
-  children: (
-    carouselImages: { url: string; alt?: string }[]
-  ) => React.ReactNode;
+  children: (carouselImages: CarouselImage[]) => React.ReactNode;
 }
 
 const Gallery: React.FC<GalleryProps> = ({ images, children }) => {
