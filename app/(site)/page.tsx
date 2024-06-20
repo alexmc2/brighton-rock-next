@@ -1,8 +1,10 @@
+// pages/index.tsx
 import React from 'react';
 import Hero from '@/components/Hero';
 import AboutSection from '@/components/About';
 import CooperativeSection from '@/components/CooperativeSection';
 import Gallery from '@/components/Gallery';
+import Carousel from '@/components/Carousel';
 import { sanityFetch } from '../client-config';
 import { SanityDocument } from 'next-sanity';
 
@@ -38,10 +40,14 @@ export default async function HomePage() {
             title={homePageContent.cooperativeTitle}
             content={homePageContent.cooperativeContent}
           />
-          <Gallery
-            title={homePageContent.galleryTitle}
-            images={homePageContent.galleryImages}
-          />
+          <Gallery images={homePageContent.galleryImages}>
+            {(carouselImages) => (
+              <Carousel
+                title={homePageContent.galleryTitle}
+                images={carouselImages}
+              />
+            )}
+          </Gallery>
         </>
       ) : (
         <div>Error loading home page content.</div>

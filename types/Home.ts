@@ -12,10 +12,12 @@ export type HomePage = {
   cooperativeContent: PortableTextBlock[];
   galleryTitle: string;
   galleryImages: {
+    _type: string;
+    _key: string;
     asset: {
-      _id: string;
-      url: string;
+      _ref: string;
+      _type: string;
     };
-    alt: string;
+    alt?: string;
   }[];
 };

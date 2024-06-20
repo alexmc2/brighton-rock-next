@@ -1,37 +1,33 @@
-import React from 'react';
-import Image from 'next/image';
-
 // components/Gallery.tsx
+import React from 'react';
+import { urlFor } from '../app/client-config';
+
 interface GalleryImage {
+  _type: string;
+  _key: string;
   asset: {
-    _id: string;
-    url: string;
+    _ref: string;
+    _type: string;
   };
-  alt: string;
+  alt?: string;
 }
 
 interface GalleryProps {
-  title: string;
   images?: GalleryImage[];
+  children: (
+    carouselImages: { url: string; alt?: string }[]
+  ) => React.ReactNode;
 }
 
-const Gallery: React.FC<GalleryProps> = ({ title, images }) => {
-  return (
-    <section>
-      <h2>{title}</h2>
-      <div>
-        {images?.map((image) => (
-          <Image
-            key={image.asset._id}
-            src={image.asset.url}
-            alt={image.alt}
-            width={500} // replace with your desired width
-            height={300} // replace with your desired height
-          />
-        ))}
-      </div>
-    </section>
-  );
+const Gallery: React.FC<GalleryProps> = ({ images, children }) => {
+  const carouselImages = images?.map((image) => ({
+    url: urlFor(image.asset)?.width(500).height(300).url() || '',
+    alt: image.alt || '',
+    width: 500,
+    height: 300,
+  }));
+
+  return <>{children(carouselImages || [])}</>;
 };
 
 export default Gallery;
