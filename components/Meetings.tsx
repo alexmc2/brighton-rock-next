@@ -46,4 +46,5 @@ const MeetingsSection: React.FC<MeetingsSectionProps> = ({
   );
 };
 
+
 export default MeetingsSection;
