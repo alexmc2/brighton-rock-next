@@ -1,22 +1,15 @@
 // components/CooperativeSection.tsx
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import { PortableText, PortableTextBlock } from '@portabletext/react';
-import {
-  Card,
-  CardContent,
-  Typography,
-  Container,
-  Button,
-  Modal,
-} from '@mui/material';
+import React, {useState} from 'react'
+import {PortableText, PortableTextBlock} from '@portabletext/react'
+import {Card, CardContent, Typography, Container, Button, Modal} from '@mui/material'
 
 interface CooperativeSectionProps {
-  title: string;
-  content: PortableTextBlock[];
-  modalTitle: string;
-  modalContent: PortableTextBlock[];
+  title: string
+  content: PortableTextBlock[]
+  modalTitle: string
+  modalContent: PortableTextBlock[]
 }
 
 const CooperativeSection: React.FC<CooperativeSectionProps> = ({
@@ -25,17 +18,14 @@ const CooperativeSection: React.FC<CooperativeSectionProps> = ({
   modalTitle,
   modalContent,
 }) => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   return (
-    <Container
-      maxWidth={false}
-      className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 mt-10 mb-10"
-    >
+    <Container maxWidth={false} className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 md:mt-4 mt-2">
       <Card>
-        <CardContent className="m-0.5 bg-primary-dark/5">
+        <CardContent className=" bg-primary-dark/5">
           <Typography
             variant="h4"
             component="h2"
@@ -48,7 +38,7 @@ const CooperativeSection: React.FC<CooperativeSectionProps> = ({
             value={content}
             components={{
               block: {
-                normal: ({ children }) => (
+                normal: ({children}) => (
                   <p className="text-xl px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 pb-4 sm:pb-6">
                     {children}
                   </p>
@@ -56,24 +46,15 @@ const CooperativeSection: React.FC<CooperativeSectionProps> = ({
               },
             }}
           />
-          <div className="px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 pb-4">
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={handleOpen}
-            >
+          <div className="px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 pb-4 sm:pb-2 ">
+            <Button variant="contained" color="primary" size="large" onClick={handleOpen}>
               Cooperative Principles
             </Button>
           </div>
         </CardContent>
       </Card>
 
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-      >
+      <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title">
         <div
           className="fixed inset-0 flex items-center justify-center p-4 bg-black bg-opacity-50"
           onClick={handleClose}
@@ -89,10 +70,8 @@ const CooperativeSection: React.FC<CooperativeSectionProps> = ({
               value={modalContent}
               components={{
                 block: {
-                  normal: ({ children }) => (
-                    <div className="text-2xl mt-4 mb-6 leading-relaxed">
-                      {children}
-                    </div>
+                  normal: ({children}) => (
+                    <div className="text-2xl mt-4 mb-6 leading-relaxed">{children}</div>
                   ),
                 },
               }}
@@ -101,7 +80,7 @@ const CooperativeSection: React.FC<CooperativeSectionProps> = ({
         </div>
       </Modal>
     </Container>
-  );
-};
+  )
+}
 
-export default CooperativeSection;
+export default CooperativeSection

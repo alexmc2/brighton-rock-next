@@ -19,7 +19,7 @@ const MeetingsSection: React.FC<MeetingsSectionProps> = ({
       className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 mt-10 mb-10"
     >
       <Card>
-        <CardContent className="m-0.5 bg-primary-dark/5">
+        <CardContent className=" bg-primary-dark/5">
           <Typography
             variant="h5"
             component="h2"

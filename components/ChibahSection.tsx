@@ -1,22 +1,19 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { PortableText, PortableTextBlock } from '@portabletext/react';
-import { Card, CardContent, Typography, Container } from '@mui/material';
+import React from 'react'
+import {PortableText, PortableTextBlock} from '@portabletext/react'
+import {Card, CardContent, Typography, Container} from '@mui/material'
 
 interface ChibahSectionProps {
-  title: string;
-  content: PortableTextBlock[];
+  title: string
+  content: PortableTextBlock[]
 }
 
-const ChibahSection: React.FC<ChibahSectionProps> = ({ title, content }) => {
+const ChibahSection: React.FC<ChibahSectionProps> = ({title, content}) => {
   return (
-    <Container
-      maxWidth={false}
-      className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 mt-10 mb-10"
-    >
+    <Container maxWidth={false} className="max-w-7xl px-4 sm:px-6 lg:px-8  mb-10 md:mt-4 mt-2">
       <Card>
-        <CardContent className="m-0.5 bg-primary-dark/5">
+        <CardContent className=" bg-primary-dark/5">
           <Typography
             variant="h4"
             component="h2"
@@ -29,8 +26,8 @@ const ChibahSection: React.FC<ChibahSectionProps> = ({ title, content }) => {
             value={content}
             components={{
               block: {
-                normal: ({ children }) => (
-                  <p className="text-xl px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 pb-4 sm:pb-4">
+                normal: ({children}) => (
+                  <p className="text-xl px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 pb-4 ">
                     {children}
                   </p>
                 ),
@@ -40,7 +37,7 @@ const ChibahSection: React.FC<ChibahSectionProps> = ({ title, content }) => {
         </CardContent>
       </Card>
     </Container>
-  );
-};
+  )
+}
 
-export default ChibahSection;
+export default ChibahSection

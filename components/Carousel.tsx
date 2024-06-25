@@ -21,21 +21,16 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ title, images }) => {
   return (
-    <Container
-      maxWidth={false}
-      className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 mt-10 mb-10"
-    >
+    <Container maxWidth={false} className="max-w-7xl px-4 sm:px-6 lg:px-8 md:mt-4 mt-2">
       <Card>
-        <CardContent className="m-0.5 bg-primary-dark/5">
+        <CardContent className=" bg-primary-dark/5">
           <Typography
             variant="h4"
             component="h2"
             gutterBottom
-            className="px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 py-4 sm:py-6"
-          >
-            {title}
-          </Typography>
-          <div className="px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20">
+            className="px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20"
+          ></Typography>
+          <div className="px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 md:py-8 lg:py-12 xl:py-16 ">
             <ReactCarousel
               showThumbs={false}
               showStatus={false}
@@ -58,7 +53,7 @@ const Carousel: React.FC<CarouselProps> = ({ title, images }) => {
         </CardContent>
       </Card>
     </Container>
-  );
+  )
 };
 
 

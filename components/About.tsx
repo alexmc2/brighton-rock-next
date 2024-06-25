@@ -31,10 +31,10 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   return (
     <Container
       maxWidth={false}
-      className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 mt-10 mb-10"
+      className="max-w-7xl px-4 sm:px-6 lg:px-8 py-2 mt-10 "
     >
       <Card>
-        <CardContent className="m-0.5 bg-primary-dark/5">
+        <CardContent className="bg-primary-dark/5">
           <Typography
             variant="h4"
             component="h2"
